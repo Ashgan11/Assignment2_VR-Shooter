@@ -396,5 +396,5 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5867114184368388260, guid: 5c8188384313584469b37ff7b1401eb9,
     type: 3}
   spawnPosition: {fileID: 8031746738480636522}
-  speed: 10
+  speed: 40
   damage: 1

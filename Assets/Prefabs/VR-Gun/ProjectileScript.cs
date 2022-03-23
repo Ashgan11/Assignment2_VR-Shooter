@@ -5,6 +5,8 @@ using UnityEngine;
 public class ProjectileScript : MonoBehaviour
 {
     private float speed, damage;
+    public float timeToLive = 30;
+    private float timeAlive = 0;
     private CapsuleCollider collisionCapsule;
     private Vector3 direction;
     // Start is called before the first frame update
@@ -18,6 +20,10 @@ public class ProjectileScript : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
+
+        //Bullet decay time
+        timeAlive += Time.deltaTime;
+        if (timeAlive >= timeToLive) Destroy(gameObject);
     }
 
     void OnCollisionEnter(){
