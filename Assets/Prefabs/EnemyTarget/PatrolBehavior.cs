@@ -8,6 +8,7 @@ public class PatrolBehavior : MonoBehaviour
     private Vector3 targetPosition, origPosition, patrolPosition;
     public float smoothTime = 0.5f;
     public float speed = 10;
+    public float tolerance = 0.1f;
     private Vector3 velocity;
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,7 @@ public class PatrolBehavior : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime, speed);
-        if (transform.position == targetPosition) switchTarget();
+        if (Vector3.Distance(transform.position, targetPosition)<= tolerance) switchTarget();
     }
 
     void switchTarget(){
