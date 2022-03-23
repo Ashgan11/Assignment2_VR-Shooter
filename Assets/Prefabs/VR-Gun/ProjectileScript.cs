@@ -7,8 +7,7 @@ public class ProjectileScript : MonoBehaviour
     private float speed, damage;
     public float timeToLive = 30;
     private float timeAlive = 0;
-    private CapsuleCollider collisionCapsule;
-    private Vector3 direction;
+    private CapsuleCollider collisionCapsule;    
     // Start is called before the first frame update
     public void Initialize(float speed, float damage) {
         this.speed = speed;
