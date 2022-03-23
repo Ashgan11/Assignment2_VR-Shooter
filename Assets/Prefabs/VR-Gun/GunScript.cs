@@ -17,10 +17,9 @@ public class GunScript : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0)){
-            Debug.Log("Bullet spawn!");
             GameObject newBullet;
             newBullet = Instantiate(bulletPrefab, spawnPosition.position, spawnPosition.rotation);
-            newBullet.GetComponent<ProjectileScript>().Initialize(speed, this.gameObject.transform.forward, damage);            
+            newBullet.GetComponent<ProjectileScript>().Initialize(speed, damage);
         }
     }
 }
